@@ -4,8 +4,8 @@ import Paper from "@material-ui/core/Paper";
 import TextField from "@material-ui/core/TextField";
 import Autocomplete from "@material-ui/lab/Autocomplete";
 import IconButton from "@material-ui/core/IconButton";
-import SearchIcon from "@material-ui/icons/Search";
-import { anyFoodDishes } from "./../constants/index";
+//import ReplayIcon from "@material-ui/icons/Replay";
+import { anyFoodDishes } from "../constants/index";
 
 const AnyFoodDishes = ({ getData }) => {
   const [query, setQuery] = useState();
@@ -13,7 +13,7 @@ const AnyFoodDishes = ({ getData }) => {
   const getFoods = () => {
     const title = document
       .querySelector("#AnyFoodDishes")
-      .nodeValue.toLowerCase()
+      .value.toLowerCase()
       .trim();
     if (query !== title) {
       setQuery(title);
@@ -37,9 +37,7 @@ const AnyFoodDishes = ({ getData }) => {
             />
           )}
         />
-        <IconButton onClick={() => getFoods()}>
-          <SearchIcon />
-        </IconButton>
+        <IconButton onClick={() => getFoods()}>BUSCAR</IconButton>
       </Paper>
     </Grid>
   );
